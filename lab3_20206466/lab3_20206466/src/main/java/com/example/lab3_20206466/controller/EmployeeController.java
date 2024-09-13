@@ -46,6 +46,14 @@ public class EmployeeController {
         model.addAttribute("employee", employee);
         return "editarEmpleado"; // Página de detalles del empleado
     }
+    @GetMapping("/cambiarDatos")
+    public String cambiarDatos(Model model) {
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Empleado no encontrado"));
+        model.addAttribute("employee", employee);
+        return "editarEmpleado"; // Página de detalles del empleado
+    }
+
 
     // Método para eliminar un empleado
 
