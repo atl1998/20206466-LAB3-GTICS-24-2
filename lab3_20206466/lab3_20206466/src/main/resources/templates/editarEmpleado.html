@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Required meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Detalles del Empleado</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employee/list">Empleados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employee/historial">Historial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employee/reportes">Reportes</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Información</h1>
+            <div class="form-group">
+                <label for="firstName">Nombre:</label>
+                <input type="text" class="form-control" id="firstName" th:value="${employee.firstName}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Apellido:</label>
+                <input type="text" class="form-control" id="lastName" th:value="${employee.lastName}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="job">Cargo:</label>
+                <input type="text" class="form-control" id="job" th:value="${employee.job.jobTitle}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="department">Departamento:</label>
+                <input type="text" class="form-control" id="department" th:value="${employee.department.departmentName}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="phone_number">Telefono:</label>
+                <input type="text" class="form-control" id="phone_number" th:value="${employee.phone_number}">
+            </div>
+            <div class="form-group">
+                <label for="salary">Salario:</label>
+                <input type="text" class="form-control" id="salary" th:value="${employee.salary}">
+            </div>
+
+
+
+
+            <!-- Botón para regresar a la lista -->
+            <div class="form-group">
+                <a href="/employee/list" class="btn btn-primary">Regresar a la Lista</a>
+            </div>
+        </div>
+
+    </body>
+</html>
